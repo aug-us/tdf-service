@@ -9,10 +9,7 @@ from tensorflow import keras
 from datetime import datetime, date
 from dateutil import relativedelta
 import matplotlib.pyplot as plt
-
-
-
-from Eval import inverscale
+#from Eval import inverscale
 
 # Flask utils
 from flask import Flask, request, render_template
@@ -28,7 +25,26 @@ with open('./path/models/scaler.pkl','rb') as f:
     scaler = pickle.load(f)
 model = keras.models.load_model('./path/models/model.h5')
 print(model)
-  
+ 
+def inverscale(yhat,test_X,test_Y,scaler):
+    
+    feature = len(scaler.scale_)
+    test_Y = np.array(test_Y)
+    test_X = test_X[1,0:feature]  
+    test_X = test_X.reshape(1,test_X.shape[0])
+    
+    if len(yhat.shape)==1:
+        yhat = yhat.reshape(len(yhat),1)
+        
+    inv_yhat = concatenate((yhat,test_X[:,:-1]),axis=1)
+    inv_yhat = scaler.inverse_transform(inv_yhat)
+    inv_yhat = inv_yhat[:,0]
+    
+    test_Y = test_Y.reshape(1,1)
+    inv_y = concatenate((test_Y,test_X[:,:-1]),axis=1)
+    inv_y = scaler.inverse_transform(inv_y)
+    inv_y = inv_y[:,0]
+    return inv_yhat,inv_y
 
 @app.route('/')
 def index():
