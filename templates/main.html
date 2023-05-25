@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <tr>
+        <td colspan="10">
+        <center><h1style="background-color:blue"><font size=5><b> Tourism Demand Forecasting for Macau</b></h1></font></center>
+        </td>
+    </tr>
+
+	<h3>
+		<center>Deep Learning Model Prediction for Forecasting</center>
+	</h3>
+
+	<form action ="/predict" method="POST" width="70%" align="center">
+		<table cellpadding="5" width="70%" bgcolor="mistyrose" align="center" cellspacing="2">
+
+        <tr>
+        <td colspan="5">
+        <center><h3style="background-color:blue"><font size=4><b> Enter a period for forecasting</b></h3></font></center>
+        </td>
+        </tr>
+
+        <tr>
+        <td>Select the starting date:</td>
+        <td><input type="month" name="start_date" id="start_date" min="2013-01" max="2018-08"/>
+        </tr>
+        <br /><br />
+
+        <tr>
+        <td>Select the ending date:</td>
+        <td><input type="month" name="end_date" id="end_date" min="2013-01" max="2018-08"/>
+        </tr>
+        <br /><br />
+
+        <tr>
+        <td><center><input type="reset"><td colspan="1"><input type="submit" value="Submit"></center></td>
+        </tr>
+    </table>
+    </form>
+    
+</body>
+
+</html>
