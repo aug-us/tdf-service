@@ -7,4 +7,5 @@ datetime
 dateutil
 matplotlib
 Eval
-flask
+Flask
+gunicorn
