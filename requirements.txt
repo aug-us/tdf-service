@@ -6,3 +6,5 @@ matplotlib
 Eval
 Flask
 gunicorn
+numpy
+pandas
