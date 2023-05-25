@@ -1,7 +1,7 @@
 tensorflow
 keras
 datetime
-dateutil
+python-dateutil
 matplotlib
 Eval
 Flask
