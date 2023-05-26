@@ -1,8 +1,5 @@
-wheel
-urllib3
-tensorflow
 keras
-tensorrt
+tensorflow
 datetime
 python-dateutil
 matplotlib
