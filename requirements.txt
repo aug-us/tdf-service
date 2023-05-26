@@ -1,3 +1,5 @@
+wheel
+urllib3
 tensorflow
 keras
 tensorrt
