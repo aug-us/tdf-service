@@ -1,5 +1,5 @@
 keras
-tensorflow
+tensorflow-cpu
 datetime
 python-dateutil
 matplotlib
@@ -8,4 +8,4 @@ Flask
 gunicorn
 numpy
 pandas
-scikit-learn
+scikit-learn==0.24.1
